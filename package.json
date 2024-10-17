@@ -1,0 +1,11 @@
+{
+  "name": "foodzy",
+  "description": "A simple frontend project using Tailwind CSS",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/style.css -o ./src/output.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.10"
+  },
+  "author": "Aswathy J Lal"
+}

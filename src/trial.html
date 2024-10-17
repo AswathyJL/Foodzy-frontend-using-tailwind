@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODZY</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="w-full overflow-x-hidden">
+    <!-- main-container -->
+    <div class="main  w-full">
+        <!-- navbar -->
+        <!-- <nav class="w-full relative">
+            <div id="navbar" class=" flex items-center justify-between md:px-5">
+                <img width="200" class="w-28 sm:w-52  object-cover z-10" src="./assets/transparent-foodzy-logo.png" alt="Foodzy">
+                <div id="navLinks" class="hidden w-full absolute md:static z-20 top-0 left-0 right-0 flex-col justify-center items-center pt-16  pb-4 md:p-0 bg-secondary md:bg-transparent md:flex md:flex-row md:justify-evenly md:w-3/4 lg:w-1/2 gap-x-4">
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">MENUS</a>
+                    <a class="text-green-900-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">LOCATIONS</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">CATERING</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">ABOUT</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium text-nowrap" href="">BOOK A TABLE</a>
+                </div>
+                <button onclick="navBarCollapse()" id="bar" class="absolute top-2 right-2 sm:static md:hidden text-2xl text-emerald-600  z-10"><i class="fa-solid fa-burger "></i></button>
+            </div>         
+        </nav> -->
+        <!-- hero section -->
+        <section class="hero-section w-96 flex flex-col justify-center align-middle md:grid  grid-cols-2  justify-items-center  items-center px-4 sm:px-8 md:px-20 lg:px-36 ">
+            <div class="mb-12">
+                <h1 class="text-center md:text-start font-primary text-5xl font-extrabold text-emerald-700 mb-5 xl:mb-14 mt-5 lg:mt-0">HEALTHY AND TASTY FOOD FOR YOUR HEALTHY FUTURE</h1>
+                <h3 class="text-center md:text-start block font-sans  text-2xl font-medium mb-10 px-4">Enjoy a healthy life by eating healthy foods that have extraordinary flavours that make your lige healthier for today and in the future</h3>
+                <button class="animate-pulse  hover:animate-none bg-gradient-to-tr from-lime-700 to-emerald-100 px-1 sm:px-8 py-2 rounded-3xl hover:from-lime-800 hover:to-lime-200 text-xl font-medium font-sans text-green-950 hover:scale-110 hvoer:text-white transition-all block mx-auto md:mx-0">Order Now</button>
+            </div>
+            <div class="">
+                <img class="object-cover  hover:animate-wiggle transition-all" src="./assets/home-main-pic.png" alt="">
+            </div>
+        </section>
+        
+    </div>
+</body>
+
+<script>
+    let isNavOpen = false;
+    const navLinks = document.getElementById('navLinks');
+    const bar = document.getElementById('bar');
+    function navBarCollapse()
+    {
+            if(!isNavOpen)
+            {
+                navLinks.classList.remove("hidden");
+                navLinks.classList.add("flex");
+                bar.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+                isNavOpen = true;
+                setTimeout(() => {
+                    document.addEventListener('click', outsideClickListener);
+                }, 0);
+            }
+            else
+            {
+                closeNavBar()
+            }
+    }
+    function closeNavBar() {
+        navLinks.classList.add("hidden");
+        navLinks.classList.remove("flex");
+        bar.innerHTML = `<i class="fa-solid fa-burger "></i>`
+
+        isNavOpen = false;
+        document.removeEventListener('click', outsideClickListener);
+    }
+
+    function outsideClickListener(event) {
+        const navbar = document.getElementById('navbar');
+        if (isNavOpen && !navbar.contains(event.target)) {
+            closeNavBar();
+        }
+    }
+
+</script>
+</html>

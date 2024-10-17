@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOODZY</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./output.css">
+
+    <!-- font awesome cdn link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="">
+    <!-- main-container -->
+    <div class="main-container  ">
+        <!-- navbar -->
+        <nav class="w-screen relative">
+            <div id="navbar" class=" flex items-center justify-between md:px-5">
+                <img width="200" class="w-28 sm:w-52  object-cover z-10" src="./assets/transparent-foodzy-logo.png" alt="Foodzy">
+                <div id="navLinks" class="hidden w-full absolute md:static z-20 top-0 flex-col justify-center items-center pt-16  pb-4 md:p-0 bg-secondary md:bg-transparent md:flex md:flex-row md:justify-evenly md:w-3/4 lg:w-1/2 gap-x-4">
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">MENUS</a>
+                    <a class="text-green-900-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">LOCATIONS</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">CATERING</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium" href="">ABOUT</a>
+                    <a class="text-green-950 my-2 hover:text-green-800 hover:underline underline-offset-8 font-medium text-nowrap" href="">BOOK A TABLE</a>
+                </div>
+                <button onclick="navBarCollapse()" id="bar" class="absolute top-2 right-3 sm:static md:hidden text-2xl text-emerald-600  z-30"><i class="fa-solid fa-burger "></i></button>
+            </div>         
+        </nav>
+        
+        <!-- hero-section -->
+        <section class="hero-section w-full flex flex-col justify-center align-middle md:grid  grid-cols-2  justify-items-center  items-center px-4 sm:px-8 md:px-20 lg:px-36 ">
+            <div class="mb-12">
+                <h1 class="text-center md:text-start font-primary text-5xl font-extrabold text-emerald-700 mb-5 xl:mb-14 mt-5 lg:mt-0">HEALTHY AND TASTY FOOD FOR YOUR HEALTHY FUTURE</h1>
+                <h3 class="text-center md:text-start block font-sans  text-2xl font-medium mb-10 px-4">Enjoy a healthy life by eating healthy foods that have extraordinary flavours that make your lige healthier for today and in the future</h3>
+                <button class="animate-pulse  hover:animate-none bg-gradient-to-tr from-lime-700 to-emerald-100 px-1 sm:px-8 py-2 rounded-3xl hover:from-lime-800 hover:to-lime-200 text-xl font-medium font-sans text-green-950 hover:scale-110 hvoer:text-white transition-all block mx-auto md:mx-0">Order Now</button>
+            </div>
+            <div class="">
+                <img class="object-cover  hover:animate-wiggle transition-all" src="./assets/home-main-pic.png" alt="">
+            </div>
+        </section>
+        <!-- slider - to be completed-->
+        <section class="Most liked-slider">
+            <h1 class="text-center font-primary text-4xl font-extrabold text-emerald-700">Most Liked By Our Customers</h1>
+            <div class="relative w-full max-w-6xl mx-auto">
+                <!-- Left Button -->
+                <button onclick="prev()" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-md z-10">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                  </svg>
+                </button>
+              
+                <!-- Image Container -->
+                <div id="image-slider" class="flex overflow-x-scroll no-scrollbar scroll-smooth space-x-4 py-4 mb-20">
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Baked Oats.jpeg" alt="Image 1" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Baked Oats</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Cobb Salad Recipe.jpeg" alt="Image 2" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Cobb Salad</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Fruit & Yogurt Parfait.jpeg" alt="Image 3" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Fruit & Yogurt Parfait</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Honey Mustard Chicken Salad.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Honey Mustard Chicken Salad</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Kiwi and coconut parfait.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Kiwi and coconut parfait</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Seven-Layer Chicken Burrito.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Seven-Layer Chicken Burrito</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/shrimp burrito bowls.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Shrimp burrito bowls</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Tomato Zucchini Pasta.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Tomato Zucchini Pasta</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                  <div class="flex-shrink-0 flex justify-center flex-col items-center w-64 transition-all ease-out hover:scale-105 p-2 ">
+                    <img src="./assets/sliderImages/Vegan Falafel Bowl.jpeg" alt="Image 4" class="w-full h-64 object-cover rounded-lg">
+                    <h5 class="font-semibold py-3 text-lg">Vegan Falafel Bowl</h5>
+                    <button class="px-3 py-1 bg-emerald-600 rounded text-white font-semibold hover:px-5 transition-all ease-in">View more...</button>
+                  </div>
+                </div>
+              
+                <!-- Right Button -->
+                <button onclick="scrollRight()" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-300 p-2 rounded-full shadow-md">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                  </svg>
+                </button>
+              </div>
+              
+        </section>
+        <!-- about -->
+        <section class="about px-4 sm:px-8 md:px-20 lg:px-36 ">
+            <div class="flex flex-col lg:grid grid-cols-5 items-center px-2">
+                <div class="group relative w-full h-full col-span-2">
+                    <img class="w-11/12 group-hover:animate-wiggle z-10" src="./assets/about5.png" alt="">
+                </div>
+                <div class="col-span-3 mb-12">
+                    <h1 class="text-center md:text-start font-primary text-5xl font-extrabold text-emerald-700 mb-5 xl:mb-14 mt-5 lg:mt-0">Fresh, Healthy, Organic, Delicious Food</h1>
+                    <p class="text-center md:text-start block font-sans  text-2xl font-medium mb-10 px-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi accusantium, harum incidunt inventore assumenda totam, quo sapiente quibusdam eos cumque recusandae delectus ipsam ipsa nihil quis doloremque tempore, dolor vero.</p>
+                    <button class="animate-pulse  hover:animate-none bg-gradient-to-tr from-lime-700 to-emerald-100 px-1 sm:px-8 py-2 rounded-3xl hover:from-lime-800 hover:to-lime-200 text-xl font-medium font-sans text-green-950 hover:scale-110 hvoer:text-white transition-all block mx-auto md:mx-0">Order From Us</button>
+                </div>
+            </div>
+        </section>
+        <!-- why-us -->
+        <section class="why-us bg-slate-100 py-8 w-full">
+            <h1 class="text-center font-primary text-4xl font-extrabold text-emerald-700">Why Choose Us</h1>
+            <div class="flex flex-col sm:grid grid-cols-2 lg:grid-cols-4 justify-items-center gap-1 md:gap-x-14 md:gap-y-16 w-full p-8">
+                <div class="lg:grid grid-cols-5 gap-x-2 items-center">
+                    <i class="fa-solid fa-certificate  lg:text-6xl text-center text-emerald-600 w-full md:text-6xl text-4xl "></i>
+                <div class="col-start-3 col-span-3">
+                    <h3 class="text-center lg:text-start my-2 text-xl font-semibold">Quality Food</h3>
+                    <p class="text-center lg:text-start col-start-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                </div>
+                </div>
+                <div class="lg:grid grid-cols-5 gap-x-5 items-center">
+                    <div class=" lg:text-6xl md:text-6xl text-4xl text-center text-nowrap lg:text-wrap "  >
+                        <i class="fa-solid fa-pepper-hot text-emerald-600"></i>
+                        <i class="fa-solid fa-carrot text-emerald-600"></i>
+                    </div>
+                    <div class="col-start-3 col-span-3">
+                        <h3 class="text-center lg:text-start my-2 text-xl font-semibold">Fresh Ingredients</h3>
+                        <p class="text-center lg:text-start col-start-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="lg:grid grid-cols-5 gap-x-2 items-center ">
+                    <i class="fa-solid fa-mug-hot  lg:text-6xl text-center text-emerald-600 w-full md:text-6xl text-4xl "></i>
+                    <div class="col-start-3 col-span-3">
+                        <h3 class="text-center lg:text-start my-2 text-xl font-semibold">Serves Hot</h3>
+                        <p class="text-center lg:text-start col-start-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                </div>
+                <div class="lg:grid grid-cols-5 gap-x-2 items-center ">
+                    <i class="fa-solid fa-truck-fast  lg:text-6xl text-center text-emerald-600 w-full md:text-6xl text-4xl "></i>
+                    <div class="col-start-3 col-span-3">
+                        <h3 class="text-center lg:text-start my-2 text-xl font-semibold">Fast Delivery</h3>
+                        <p class="text-center lg:text-start col-start-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- menu - to be completed -->
+        <section class="explore-menu"></section>
+        <!-- booking -->
+        <section class="book-a-table md:px-28 lg:px-48 my-12 w-full">
+            <div class="w-full flex flex-col lg:flex-row justify-center items-center rounded-3xl bg-slate-100 p-5 lg:p-0">
+                <div class="table-img w-4/6">
+                    <img class="object-cover rounded-full lg:rounded-3xl xl:rounded-l-3xl xl:rounded-none" src="./assets/table.jpg" alt="">
+                </div>
+                <div class="table-form ps-12 flex flex-col justify-center align-middle items-center px-10">
+                    <h1 class="text-center font-primary text-4xl font-extrabold text-emerald-700 lg:mb-5 xl:mb-14 mt-5 lg:mt-0">Book A Table</h1>
+                    <h3 class="text-center text-xl lg:mb-5 xl:mb-10 font-semibold">We offer you exclusive dining expereince with pre-booked resrvations. Pre-book your table and enjoy hazzle free dining expereince with at Foodzy.</h3>
+                    <button class=" px-1 sm:px-4 py-2 rounded-3xl bg-emerald-700 text-white mt-4 sm:text-nowrap">Check Availability</button>
+                    <button class=" px-4 py-2 rounded-3xl bg-emerald-700 text-white mt-4">Book Now</button>
+                </div>
+            </div>
+        </section>
+        <!-- footer -->
+        <footer class="w-full bg-slate-100 py-8">
+            <div  class="footer-subdiv flex place-items-center justify-evenly align-top flex-wrap flex-col sm:flex-row ">
+                <div class="footer-div flex flex-col items-center">
+                    <img id="logo" class="w-52" src="./assets/transparent-foodzy-logo.png" alt="FOODZY">
+                    <div class="icon-collections flex gap-x-4">
+                        <!-- X -->
+                        <div class="icon">
+                            <a target="_blank" href="h">
+                                <i class="fa-brands fa-x-twitter p-2 text-gray-700 rounded-full bg-lime-600 hover:animate-bounce"></i>
+                            </a>
+                        </div>
+                        <!-- Facebook -->
+                        <div class="icon">
+                            <a target="_blank" href="">
+                                <i class="fa-brands fa-facebook-f p-2 text-gray-700 rounded-full bg-lime-600 hover:animate-bounce"></i>
+                            </a>
+                        </div>
+                        <!-- Instagram -->
+                        <div class="icon">
+                            <a target="_blank" href="">
+                                <i class="fa-brands fa-instagram p-2 text-gray-700 rounded-full bg-lime-600 hover:animate-bounce"></i>
+                            </a>
+                        </div>
+                        <!-- Mail -->
+                        <div class="icon">
+                            <a target="_blank" href="">
+                                <i class="fa-regular fa-envelope p-2 text-gray-700 rounded-full bg-lime-600 hover:animate-bounce"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="footer-div list-none">
+                    <li class=" main text-xl font-medium">Navigation</li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blogs">Menu</a></li>
+                    <li><a href="#About">About</a></li>
+                    <li><a href="#guides">Catering</a></li>
+                </div>
+                <div class="footer-div list-none">
+                    <li class=" main text-xl font-medium">Popular Dishes</li>
+                    <li><a href="#">Walking on the streets with The Paris Beauty...</a></li>
+                    <li><a href="#">Walking on the streets with The Paris Beauty...</a></li>
+                    <li><a href="#">Walking on the streets with The Paris Beauty...</a></li>
+                </div>
+                <div class="footer-div list-none">
+                    <li class=" main text-xl font-medium">Contact Us</li>
+                    <li>foodzy@gmail.com</li>
+                    <li><button class=" px-4 py-2 rounded-3xl bg-emerald-700 text-white mt-4">Book Now</button></li>
+                    
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script>
+    let isNavOpen = false;
+    const navLinks = document.getElementById('navLinks');
+    const bar = document.getElementById('bar');
+    
+    function navBarCollapse() {
+        if (!isNavOpen) {
+            // Open the menu
+            navLinks.classList.remove("hidden");
+            navLinks.classList.add("flex");
+            bar.innerHTML = `<i class="fa-solid fa-xmark "></i>`;
+            isNavOpen = true;
+        } else {
+            // Close the menu
+            closeNavBar();
+        }
+    }
+
+    function closeNavBar() {
+        // Close the menu
+        navLinks.classList.add("hidden");
+        navLinks.classList.remove("flex");
+        bar.innerHTML = `<i class="fa-solid fa-burger"></i>`;
+        isNavOpen = false;
+    }
+
+    // function prev()
+    // {
+		// document.getElementById('slider-container').scrollLeft -= 270;
+    // }
+
+    // function next()
+    // {
+    //         document.getElementById('slider-container').scrollLeft += 270;
+    // }
+    function prev() {
+    document.getElementById('image-slider').scrollLeft -= 270;
+    console.log(document.getElementById('image-slider').scrollLeft);
+    }
+   
+
+
+    function scrollRight() {
+    document.getElementById('image-slider').scrollLeft += 270;
+    console.log(document.getElementById('image-slider').scrollLeft);
+    }
+    
+
+</script>
+</html>
